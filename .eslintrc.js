@@ -8,6 +8,18 @@ module.exports = {
       jsx: true,
     },
   },
+  globals: {
+    React: true,
+    google: true,
+    mount: true,
+    mountWithRouter: true,
+    shallow: true,
+    shallowWithRouter: true,
+    context: true,
+    expect: true,
+    jsdom: true,
+    JSX: true,
+  },
   settings: {
     react: {
       version: 'detect',
@@ -33,6 +45,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'jsx-a11y/no-onchange': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {

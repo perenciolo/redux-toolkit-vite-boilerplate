@@ -1,1 +1,1 @@
-export {default as ChildComponent} from './ChildComponent'
+export { default as ChildComponent } from './ChildComponent';

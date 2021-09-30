@@ -6,8 +6,8 @@ interface Breed {
   id: string;
   name: string;
   image: {
-    url: string
-  }
+    url: string;
+  };
 }
 
 export const apiSlice = createApi({
@@ -15,19 +15,19 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.thedogapi.com/v1',
     prepareHeaders(headers) {
-      headers.set('x-api-key', DOGS_API_KEY)
-      return headers
-    }
+      headers.set('x-api-key', DOGS_API_KEY);
+      return headers;
+    },
   }),
   endpoints(builder) {
     return {
-      fetchBreeds: builder.query<Breed[], number|void>({
+      fetchBreeds: builder.query<Breed[], number | void>({
         query(limit = 50) {
           return `/breeds?limit=${limit}`;
-        }
-      })
-    }
-  }
+        },
+      }),
+    };
+  },
 });
 
-export const { useFetchBreedsQuery } = apiSlice
+export const { useFetchBreedsQuery } = apiSlice;

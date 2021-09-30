@@ -1,6 +1,7 @@
-
-export default function(): JSX.Element {
-  return <div>
-    <p>Hey</p>
-  </div>
+export default function ChildComponent(): JSX.Element {
+  return (
+    <div>
+      <p>Hey</p>
+    </div>
+  );
 }
