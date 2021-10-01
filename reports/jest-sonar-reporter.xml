@@ -1,6 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-    <file path="/home/gustavolima/Projects/js/react/redux-boilerplate/src/components/ChildComponent/ChildComponent.spec.tsx">
-        <testCase name="ChildComponent should render properly" duration="27"/>
-    </file>
 </testExecutions>
