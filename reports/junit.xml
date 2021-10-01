@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="1" failures="0" errors="0" time="1.223">
+  <testsuite name="src/components/ChildComponent/ChildComponent.spec.tsx" errors="0" failures="0" skipped="0" timestamp="2021-10-01T11:39:20" time="0.787" tests="1">
+    <testcase classname="ChildComponent - should render properly" name="ChildComponent - should render properly" time="0.027">
+    </testcase>
+  </testsuite>
+</testsuites>

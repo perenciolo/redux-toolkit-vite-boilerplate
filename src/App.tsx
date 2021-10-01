@@ -1,10 +1,10 @@
-import './App.css';
-
 import { useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { amountAdded } from './features/counter/counter-slice';
 import { useFetchBreedsQuery } from './features/dogs/dogs-api-slice';
+
+import './App.css';
 
 function App() {
   const count = useAppSelector((state) => state.counter.value);

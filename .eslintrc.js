@@ -29,6 +29,7 @@ module.exports = {
     browser: true,
     amd: true,
     node: true,
+    'jest/globals': true,
   },
   extends: [
     'eslint:recommended',
@@ -36,14 +37,31 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended', // Make sure this is always the last element in the array.
   ],
-  plugins: ['simple-import-sort', 'prettier'],
+  plugins: ['simple-import-sort', 'jest', 'prettier'],
   rules: {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/accessible-emoji': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'simple-import-sort/imports': 'error',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // Packages. `react` related packages come first, then side effects.
+          ['^react', '^@?\\w', '^\\u0000'],
+
+          // Parent imports then, other relative imports. Put same-folder imports and `.` last.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+
+          // Styles
+          ['^.+\\.s?css$'],
+
+          // then image imports.
+          ['^.+\\.(svg|png|jpg)$'],
+        ],
+      },
+    ],
     'simple-import-sort/exports': 'error',
     'jsx-a11y/no-onchange': 'off',
     'jsx-a11y/anchor-is-valid': [
